@@ -1,4 +1,6 @@
+from datetime import datetime
 from django.db import models
+from django.utils.timezone import localtime, now
 
 # Create your models here.
 
@@ -11,3 +13,12 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        
+        if self.completed:
+            self.completed_date = localtime(now())
+        else:
+            self.completed_date = None
+
+        super(Task, self).save(*args, **kwargs)
