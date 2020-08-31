@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used Fin production secret!
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'v7sqr$n5%6sd8+t9u#j^glocdohguti8i^epm-a*yfcuz-i-an'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -85,7 +85,10 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+        'default': dj_database_url.config(
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
 
 # Password validation
@@ -123,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:4200",
+    "http://localhost:3000",
 ]
 
 REST_FRAMEWORK = {
