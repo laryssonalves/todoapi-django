@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -93,7 +94,7 @@ ALLOWED_HOSTS = ['localhost', ".herokuapp.com"]
 DATABASES = {
     'default': dj_database_url.config(
         conn_max_age=600,
-        ssl_require=False
+        ssl_require=True
     )
 }
 
