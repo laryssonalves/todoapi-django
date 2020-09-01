@@ -125,9 +125,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     "https://todoweb-react.herokuapp.com/",
+# ]
 
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d/%m/%y %H:%M',
