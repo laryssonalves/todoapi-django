@@ -138,4 +138,4 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d/%m/%y %H:%M',
 }
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
