@@ -28,7 +28,7 @@ DEBUG = False
 
 # Application definition
 
-ADMINS = ['larysson.alves@gmail.com']
+ADMINS = [('Larysson', 'larysson.alves@gmail.com')]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
