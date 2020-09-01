@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -178,4 +177,4 @@ REST_FRAMEWORK = {
 #     }}
 #
 # django_heroku.settings(config=locals(), staticfiles=False, logging=False)
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
