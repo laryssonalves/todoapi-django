@@ -26,11 +26,6 @@ SECRET_KEY = 'v7sqr$n5%6sd8+t9u#j^glocdohguti8i^epm-a*yfcuz-i-an'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-if DEBUG:
-    ALLOWED_HOSTS = ['*']
-else:
-    ALLOWED_HOSTS = [".herokuapp.com"]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,7 +74,9 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+CORS_ALLOW_ALL_ORIGINS = True
 if DEBUG:
+    ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -87,6 +84,10 @@ if DEBUG:
         }
     }
 else:
+    ALLOWED_HOSTS = [".herokuapp.com"]
+    # CORS_ALLOWED_ORIGINS = [
+    #     "https://todoweb-react.herokuapp.com/",
+    # ]
     DATABASES = {
         'default': dj_database_url.config(
             conn_max_age=600,
@@ -127,13 +128,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-
-CORS_ALLOW_ALL_ORIGINS = True
-
-# CORS_ALLOWED_ORIGINS = [
-#     "https://todoweb-react.herokuapp.com/",
-# ]
 
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d/%m/%y %H:%M',
