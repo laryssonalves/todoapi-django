@@ -89,7 +89,7 @@ if DEBUG:
     }
 else:
     CORS_ALLOWED_ORIGINS = [
-        "https://todoweb-react.herokuapp.com/",
+        "https://todoweb-react.herokuapp.com",
     ]
     DATABASES = {
         'default': dj_database_url.config(
