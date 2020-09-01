@@ -28,6 +28,8 @@ DEBUG = False
 
 # Application definition
 
+ADMINS = ['larysson.alves@gmail.com']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,8 +77,9 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ['localhost', ".herokuapp.com"]
+
 if DEBUG:
-    ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -84,7 +87,6 @@ if DEBUG:
         }
     }
 else:
-    ALLOWED_HOSTS = [".herokuapp.com"]
     # CORS_ALLOWED_ORIGINS = [
     #     "https://todoweb-react.herokuapp.com/",
     # ]
@@ -128,6 +130,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d/%m/%y %H:%M',
